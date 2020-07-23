@@ -15,6 +15,7 @@ framework:
                 - inited
                 - fetched
                 - stored
+                - end
             transitions:
                 init:
                     from: start
@@ -25,3 +26,9 @@ framework:
                 storing:
                     from: fetched
                     to: stored
+                ending:
+                    from: stored
+                    to: end
+                reinit:
+                    from: [inited, fetched, stored, end]
+                    to: inited
