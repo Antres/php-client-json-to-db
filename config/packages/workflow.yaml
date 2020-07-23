@@ -9,7 +9,7 @@ framework:
             marking_store:
                 type: 'method'
                 property: 'currentPlace'
-            initial_marking: 'inited'
+            initial_marking: start
             places:
                 - start
                 - inited

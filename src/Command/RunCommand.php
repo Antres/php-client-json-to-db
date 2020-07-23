@@ -29,8 +29,8 @@ class RunCommand extends Command
         $this
             ->setDescription('Start a workflow')
             ->addArgument('workflow_name', InputArgument::REQUIRED, 'Name of workflow to start')
-            ->addOption('state', 's', InputOption::VALUE_REQUIRED, 'Set the initial state', 'start')
-            ->addOption('transition', 't', InputOption::VALUE_REQUIRED, 'Set the transition to exectute', 'init')
+            ->addOption('state', 's', InputOption::VALUE_OPTIONAL, 'Set the initial state')
+            ->addOption('transition', 't', InputOption::VALUE_OPTIONAL, 'Set the transition to exectute')
         ;
     }
 
@@ -40,9 +40,10 @@ class RunCommand extends Command
         $workflowName = $input->getArgument('workflow_name');
 
         $subject = $this->workflowSubject;
-        $subject->setCurrentPlace($input->getOption('state'));
         $workflow = $this->workflowsRegistry->get($subject, $workflowName);
-        $workflow->apply($subject, $input->getOption('transition'));
+        
+        $subject->setCurrentPlace($input->getOption('state') ?? $workflow->getDefinition()->getInitialPlaces()[0]);
+        $workflow->apply($subject, $input->getOption('transition') ?? $workflow->getEnabledTransitions($subject, $workflow)[0]->getName());
 
 	$workflow->getEnabledTransitions($subject);
 

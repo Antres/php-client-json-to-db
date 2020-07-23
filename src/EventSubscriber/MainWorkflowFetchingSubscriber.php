@@ -11,7 +11,6 @@ class MainWorkflowFetchingSubscriber implements EventSubscriberInterface
         $data = json_decode($event->getSubject()->getClientJson()->request('GET', '')->getContent());
 
         $event->getSubject()->setData($data);
-        \dump($data);
     }
 
     public static function getSubscribedEvents()
