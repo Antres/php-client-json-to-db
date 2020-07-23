@@ -29,6 +29,3 @@ framework:
                 ending:
                     from: stored
                     to: end
-                reinit:
-                    from: [inited, fetched, stored, end]
-                    to: inited
