@@ -11,12 +11,12 @@
 <polygon fill="white" stroke="white" points="-4,5 -4,-76 615,-76 615,5 -4,5"/>
 <!-- place_2b020927d3c6eb407223a1baa3d6ce3597a3f88d -->
 <g id="node1" class="node"><title>place_2b020927d3c6eb407223a1baa3d6ce3597a3f88d</title>
-<ellipse fill="none" stroke="#333333" cx="36" cy="-36" rx="36" ry="36"/>
+<ellipse fill="lightblue" stroke="#333333" cx="36" cy="-36" rx="36" ry="36"/>
 <text text-anchor="middle" x="36" y="-33.8" font-family="Arial" font-size="9.00">start</text>
 </g>
 <!-- place_8ccb14e1c0e6959632002dbe4b4d14d7d4ef935a -->
 <g id="node2" class="node"><title>place_8ccb14e1c0e6959632002dbe4b4d14d7d4ef935a</title>
-<ellipse fill="lightblue" stroke="#333333" cx="158" cy="-36" rx="36" ry="36"/>
+<ellipse fill="none" stroke="#333333" cx="158" cy="-36" rx="36" ry="36"/>
 <text text-anchor="middle" x="158" y="-33.8" font-family="Arial" font-size="9.00">inited</text>
 </g>
 <!-- place_2b020927d3c6eb407223a1baa3d6ce3597a3f88d&#45;&gt;place_8ccb14e1c0e6959632002dbe4b4d14d7d4ef935a -->
