@@ -1,2 +1,27 @@
 framework:
-    workflows: null
+    workflows:
+        main:
+            type: 'state_machine'
+            audit_trail:
+                enabled: true
+            supports:
+                - \App\WorkflowSubject\MainWorkflowSubject
+            marking_store:
+                type: 'method'
+                property: 'currentPlace'
+            initial_marking: 'inited'
+            places:
+                - start
+                - inited
+                - fetched
+                - stored
+            transitions:
+                init:
+                    from: start
+                    to: inited
+                fetching:
+                    from: inited
+                    to: fetched
+                storing:
+                    from: fetched
+                    to: stored
