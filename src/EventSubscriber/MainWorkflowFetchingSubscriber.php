@@ -8,7 +8,9 @@ class MainWorkflowFetchingSubscriber implements EventSubscriberInterface
 {
     public function onWorkflowMainTransitionFetching($event)
     {
-        $data = json_decode($event->getSubject()->getClientJson()->request('GET', '')->getContent());
+        $data = json_decode($event->getSubject()->getClientJson()->request('GET', '')->getContent()
+            , true
+        );
 
         $event->getSubject()->setData($data);
     }

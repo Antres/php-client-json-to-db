@@ -29,3 +29,9 @@ framework:
                 ending:
                     from: stored
                     to: end
+            metadata:
+                data_map:
+                    App\Entity\JsonDataEntity:
+                        author: 'json["authors"][0]["email"]'
+                        project: 'json["name"]'
+                        path: 'json["autoload"]["psr-4"]["App\\"]'

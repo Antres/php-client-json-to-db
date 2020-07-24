@@ -19,4 +19,4 @@ framework:
     http_client:
         scoped_clients:
             client_json:
-                base_uri: 'http://127.0.0.1:1234/composer.json'
+                base_uri: 'http://127.0.0.1:1234/resource.json'
